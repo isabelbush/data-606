@@ -47,4 +47,10 @@ Cloud platform accessed remotely via the internet that hosts repositories
 - git remote add origin [\[github link\]](https://github.com/isabelbush/data-606.git) = connect git to github
 - git branch -M main = change name of core local branch from master to main
 - git push -u origin main = send commits to github
-- README = cover file
+
+# .gitignore
+
+- touch .gitignore = add to repository root to instruct Git which files to ignore
+- git add .gitignore = file should still be committed
+- echo "[file_path]" >> .gitignore
+- cat .gitignore = check which files are being ignored
