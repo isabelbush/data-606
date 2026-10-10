@@ -50,7 +50,7 @@ Cloud platform accessed remotely via the internet that hosts repositories
 
 # .gitignore
 
-- touch .gitignore = add to repository root to instruct Git which files to ignore
+- touch .gitignore = add to repository root
 - git add .gitignore = file should still be committed
-- echo "[file_path]" >> .gitignore
+- echo "[file_path]" >> .gitignore = instruct Git which files to ignore
 - cat .gitignore = check which files are being ignored
