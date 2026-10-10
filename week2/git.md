@@ -44,7 +44,7 @@ Cloud platform accessed remotely via the internet that hosts repositories
 
 ## Commands
 
-- git remote add origin [github link] = connect git to github
+- git remote add origin [\[github link\]](https://github.com/isabelbush/data-606.git) = connect git to github
 - git branch -M main = change name of core local branch from master to main
 - git push -u origin main = send commits to github
 - README = cover file
