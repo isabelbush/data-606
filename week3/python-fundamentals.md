@@ -598,6 +598,19 @@ print_name(full_name("Bob", "Bloggs"))
 ```
 Retuns `Bob Bloggs`
 
+## Type Hint
+
+Communicate what type of data a function is expected to receive and return
+```python
+def full_name(first_name: str, last_name: str) -> str:
+    return first_name + ' ' + last_name
+
+def print_name(full_name_return: str) -> None:
+    print(full_name_return)
+
+print_name(full_name("Bob", "Bloggs"))
+```
+
 # Lambdas
 
 Anonymous function

@@ -11,6 +11,8 @@ Group related data and functionality into objects
     - `self.name` = attribute that stores that value on the object
 - Method = function within a class
 ```python
+# dog.py
+
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -41,8 +43,9 @@ Returns `Luna barked` and `Lassie barked`
 
 Hide implementation details from user
 
-e.g. Dog class stored in dog.py and imported into main.py
 ```python
+# main.py
+
 from dog import Dog
 
 dog1 = Dog("Luna")
@@ -58,6 +61,8 @@ Returns `Luna barked` and `Lassie barked` without the user seeing the method
 Subclass objects inherit properties and methods from superclass
 
 ```python
+# guide_dog.py
+
 from dog import Dog
 
 class GuideDog(Dog):
@@ -70,6 +75,8 @@ class GuideDog(Dog):
 ```
 Call methods from both the subclass and the superclass
 ```python
+# main.py
+
 from guide_dog import GuideDog
 
 dog3 = GuideDog("Lily")
@@ -86,6 +93,8 @@ Control how data is accessed and modified
 - `@property` = read private attribute like a normal attribute
 - `@age.setter` = change an attribute with optional validation
 ```python
+# dog.py
+
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -105,6 +114,8 @@ class Dog:
 ```
 Access and modify attribute via the `@property`
 ```python
+# main.py
+
 from dog import Dog
 
 dog1 = Dog("Luna")
@@ -123,6 +134,8 @@ Still returns `5` because the `@age.setter` condition has not been met
 
 Different objects respond to same method in different ways
 ```python
+# dog.py
+
 class Dog:
     def __init__(self, name):
         self.name = name
@@ -135,6 +148,8 @@ class Dog:
 ```
 Define new `move()` function in subclass that overrides the `move()` function inherited from the superclass
 ```python
+# guide_dog.py
+
 from dog import Dog
 
 class GuideDog(Dog):
@@ -150,6 +165,8 @@ class GuideDog(Dog):
 ```
 Call the same method on different objects
 ```python
+# main.py
+
 from dog import Dog
 from guide_dog import GuideDog
 
