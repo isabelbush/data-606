@@ -595,3 +595,34 @@ def print_name(full_name_return):
     print(full_name_return)
 
 print_name(full_name("Bob", "Bloggs"))
+```
+Retuns `Bob Bloggs`
+
+# Lambdas
+
+Anonymous function
+```python
+def add(num1, num2):
+    return num1 + num2
+
+print(add(1, 2))
+```
+Returns `3`
+
+```python
+addition = lambda num1, num2: num1 + num2
+
+print(addition(1, 2))
+```
+Returns `3`
+
+## Mapping
+
+Apply to every item in an iterable
+```python
+savings = [234.00, 255.00, 673.00, 78.00]
+
+bonus = list(map(lambda x : x * 1.1, savings))
+
+print(bonus)
+```
