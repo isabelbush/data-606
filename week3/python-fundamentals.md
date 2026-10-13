@@ -639,3 +639,54 @@ bonus = list(map(lambda x : x * 1.1, savings))
 
 print(bonus)
 ```
+
+# File Management
+
+## Module
+
+Single Python file containing reusable code such as functions, classes or variables which will need to be imported into the main file to be used
+
+```python
+# arithmetic.py
+
+def double(number):
+    return number * 2
+
+def half(number):
+    return number / 2
+```
+```python
+# main.py
+
+from arithmetic import double
+
+print double(5)
+```
+Returns `10`
+
+## Package
+
+Organise related modules into directory structure
+```python
+maths/ Package
+</> arithmetic.py Module
+</> statistics.py Module
+```
+```python
+# main.py
+
+from maths.arithmetic import double
+
+print double(5)
+```
+Returns `10`
+
+## Libraries
+
+Collection of reusable code that provides functionality (e.g. Python standard library)
+```python
+import random
+
+print(random.randint(1, 10))
+```
+Returns a random number between 1 and 10

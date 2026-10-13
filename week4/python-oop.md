@@ -90,49 +90,33 @@ Returns `Lily guides` and `Lily barked` even though the `bark()` method is defin
 
 Control how data is accessed and modified
 - Double underscore before attribute stores it privately
-- `@property` = read private attribute like a normal attribute
-- `@age.setter` = change an attribute with optional validation
+- `have_birthday()` controls how the age changes
+- `get_age()` allows you to retrieve the age
 ```python
 # dog.py
-
 class Dog:
     def __init__(self, name):
         self.name = name
-        self.__age = None
-
-    @property
-    def age(self):
-        return self.__age
-
-    @age.setter
-    def age(self, value):
-        if value >= 0:
-            self.__age = value
+        self.__age = 0
     
-    def bark(self):
-        print(self.name + " barked")
+    def have_birthday(self):
+        self.__age = self.__age + 1
+
+    def get_age(self):
+        return self.__age
 ```
-Access and modify attribute via the `@property`
 ```python
-# main.py
+dog4 = Dog("Rex")
 
-from dog import Dog
+dog4.have_birthday()
 
-dog1 = Dog("Luna")
-
-dog1.age = 5
-print(dog1.age)
+dog4.get_age()
 ```
-Returns `5`
-```python
-dog1.age = -2
-print(dog1.age)
-```
-Still returns `5` because the `@age.setter` condition has not been met
+Returns `1`
 
 ## Polymorphism
 
-Different objects respond to same method in different ways
+Different objects respond to the same method in different ways
 ```python
 # dog.py
 
@@ -163,7 +147,7 @@ class GuideDog(Dog):
     def move(self):
         print(self.name + " walks beside its owner")
 ```
-Call the same method on different objects
+Call the same method and the output changes depending on the object
 ```python
 # main.py
 
