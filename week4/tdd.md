@@ -5,7 +5,27 @@ Write a failing test before you write the code that passes the test
 2. Green: write just enough code to pass test
 3. Refactor: clean up code and tests
 
-## Red
+### Pros
+
+- Fewer defects (bugs surface immediately during production)
+- Safe refactoring (tests let you know immediately if you broke something)
+- Better design (code tends to be modular and loosely coupled)
+- Living documentation (tests demonstrate how each function works)
+- Clear scope (stop when tests pass)
+- Faster debugging (failing test = recent change)
+
+### Cons
+
+- Slower at first (more upfront time)
+- Learning curve (writing good tests is a skill)
+- Brittle tests (break on every refactor and become a burden)
+- False confidence (missed edge cases and integration problems)
+- Poor fit for exploration (change too fast)
+- Legacy code is hard (tightly coupled)
+
+## Example
+
+### Red
 
 ```python
 # test_palindrome.py
@@ -17,7 +37,7 @@ def test_is_palindrome():
 ```
 Returns an error because `palindrome.py` does not exist yet
 
-## Green
+### Green
 
 ```python
 # palindrome.py
@@ -27,7 +47,7 @@ def is_palindrome(text):
 ```
 Test now runs successfully
 
-## Red
+### Red
 
 ```python
 # test_palindrome.py
@@ -39,7 +59,7 @@ def test_mixed_case():
 ```
 Returns an error because code does not account for capital letters
 
-## Green
+### Green
 
 ```python
 # palindrome.py
@@ -50,7 +70,7 @@ def is_palindrome(text):
 ```
 Test now runs successfully
 
-## Red
+### Red
 
 ```python
 # test_palindrome.py
@@ -62,7 +82,7 @@ def test_spaces():
 ```
 Returns an error because code does not account for spaces
 
-## Green
+### Green
 
 ```python
 # palindrome.py
@@ -73,7 +93,7 @@ def is_palindrome(text):
 ```
 Test now runs successfully
 
-## Refactor
+### Refactor
 
 Add type hint
 ```python
@@ -89,7 +109,33 @@ Run tests again to confirm code still works
 
 Test individual components (e.g. functions, methods, classes, modules) in isolation
 
-## Red
+### Principles
+
+- Fast
+- Independent
+- Repeatable
+- Self-validating
+- Timely
+
+### Arrange, Act, Assert
+
+Structure every test into three clear blocks
+1. Arrange = set up inputs and expected result
+2. Act = call the code
+3. Assert = check the outcome
+
+```python
+def test_discount()
+    price = 50.0
+
+    result = apply_discount(price, percent = 10)
+
+    assert result == 45.0
+```
+
+## Example
+
+### Red
 
 ```python
 # test_calculator.py
@@ -106,7 +152,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-## Green
+### Green
 
 ```python
 # calculator.py
@@ -115,7 +161,7 @@ def add ():
     return 2
 ```
 
-## Red
+### Red
 
 ```python
 # test_calculator.py
@@ -135,7 +181,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-## Green
+### Green
 
 ```python
 # calculator.py
@@ -144,7 +190,7 @@ def add (num1, num2):
     return num1 + num2
 ```
 
-## Refactor
+### Refactor
 
 ```python
 # test_calculator.py
