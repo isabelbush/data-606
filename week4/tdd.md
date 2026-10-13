@@ -84,3 +84,109 @@ def is_palindrome(text: str) -> bool:
     return text == text[::-1]
 ```
 Run tests again to confirm code still works
+
+# Unit Testing
+
+Test individual components (e.g. functions, methods, classes, modules) in isolation
+
+## Red
+
+```python
+# test_calculator.py
+
+from calculator import add
+
+import unittest
+
+class TestCalculator(unittest.TestCase):
+    def test_add_equals_2(self):
+        self.assertEqual(add(1, 1), 2)
+    
+if __name__ == '__main__':
+    unittest.main()
+```
+
+## Green
+
+```python
+# calculator.py
+
+def add ():
+    return 2
+```
+
+## Red
+
+```python
+# test_calculator.py
+
+from calculator import add
+
+import unittest
+
+class TestCalculator(unittest.TestCase):
+    def test_add_equals_2(self):
+        self.assertEqual(add(1, 1), 2)
+    
+    def test_add_equals_3(self):
+        self.assertEqual(add(1, 2), 3)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+## Green
+
+```python
+# calculator.py
+
+def add (num1, num2):
+    return num1 + num2
+```
+
+## Refactor
+
+```python
+# test_calculator.py
+
+from calculator import add
+
+import unittest
+
+class TestCalculator(unittest.TestCase):
+    def test_add_equals_2(self):
+        self.assertEqual(add(1, 1), 2)
+    
+    def test_add_equals_3(self):
+        self.assertEqual(add(1, 2), 3)
+    
+    def test_add(self):
+        actual_result = add(10, 5)
+        expected_result = 15
+        self.assertEqual(actual_result, expected_result)
+
+if __name__ == '__main__':
+    unittest.main()
+```
+
+## Assert Methods
+
+![alt text](../images/image-40.png)
+
+# Pytest
+
+```python
+import pytest
+
+from calculator import add
+
+@pytest.mark.parametrize('num1, num2, expected_result', [
+    (2, 1, 1),
+    (10, 5, 5),
+    (20, 10, 10)
+])
+
+def test_subtract(num1, num2, expected_result):
+    assert add(2, 1) == 3
+```
+`parametrize` = run same test with mutliple inputs

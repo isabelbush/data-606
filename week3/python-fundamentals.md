@@ -347,6 +347,13 @@ print(s)
 ```
 Returns `{1, 2, 3}`
 
+## Tuple
+
+Ordered and immutable list that cannot be changed after creation
+```python
+shopping_list = ("eggs", "bread", "cheese")
+```
+
 # Dictionaries
 
 Dictionaries are based on key-value pairs
@@ -640,12 +647,11 @@ bonus = list(map(lambda x : x * 1.1, savings))
 print(bonus)
 ```
 
-# File Management
+# Code Structure
 
 ## Module
 
-Single Python file containing reusable code such as functions, classes or variables which will need to be imported into the main file to be used
-
+Single Python file containing reusable code such as functions, classes or variables
 ```python
 # arithmetic.py
 
@@ -666,7 +672,7 @@ Returns `10`
 
 ## Package
 
-Organise related modules into directory structure
+Directory containing multiple modules
 ```python
 maths/ Package
 </> arithmetic.py Module
@@ -683,10 +689,140 @@ Returns `10`
 
 ## Libraries
 
-Collection of reusable code that provides functionality (e.g. Python standard library)
+Collection of packages that provide related functionality (e.g. Python standard library)
 ```python
 import random
 
 print(random.randint(1, 10))
 ```
 Returns a random number between 1 and 10
+
+# Errors
+
+- SyntaxError = incorrect keyword spelling or punctuation
+- IndentationError = incorrect indentation
+- NameError = incorrect variable or function name
+- AttributeError = attribute or method does not exist for that object
+- TypeError = wrong data type for that operation
+- ValueError = invalid value for that operation
+- IndexError = position that does not exist in collection
+- KeyError = dictionary key does not exist
+- ZeroDivisionError = cannot divide by 0
+- ImportError = cannot import function from module
+- ModuleNotFoundError = cannot locate module
+- FileNotFoundError = cannot locate file
+- RecursionError = function calls itself too many times without stopping
+- FileExistsError = file name already exists
+
+## Control Flow
+
+Flow continues even in case of error
+```python
+try:
+    file = open("ord3r.txt")
+except FileNotFoundError as errmsg:
+    print("File Not Found")
+    print(errmsg)
+```
+Returns `File Not Found` and `[Errno 2] No such file or directory: 'ord3r.txt'`
+
+# Files
+
+## open()
+
+Accesses file
+```python
+file = open("order.txt", "r")
+content = file.read()
+print(content)
+file.close()
+```
+
+## with open()
+
+Automatically closes file when indented block finishes
+```python
+with open("order.txt", "r") as file:
+    content = file.read()
+    print(content)
+```
+
+## Modes
+
+Second argument in `open()` function tells Python what to do with the file
+
+![alt text](../images/image-41.png)
+
+### "r"
+
+```python
+def open_and_print_file(file):
+    with open(file, "r") as opened_file:
+        for line in opened_file:
+            print(line.strip())
+
+open_and_print_file("order.txt")
+```
+Returns each line from `order.txt` file
+- `line.strip()` removes line breaks and extra white space before and after string
+
+### "a"
+
+```python
+def update_file(file, order_item):
+    with open(file, "a") as opened_file:
+        opened_file.write(order_item + "\n")
+
+update_file("order.txt", "butter")
+```
+Appends new item to `order.txt` file
+- Avoid `"w"` as this will truncate and overwrite the list
+
+## .csv
+
+### Extract
+
+```python
+import csv
+
+with open("user_details.csv", newline = "") as csv_file:
+    csv_reader = csv.reader(csv_file, delimiter = ",")
+    for row in csv_reader:
+        print(row)
+```
+
+### Transform
+
+```python
+import csv
+
+def transform_user_details():
+    extracted_details = []
+    with open("user_details.csv", newline="") as csv_file:
+        csv_reader = csv.reader(csv_file, delimiter=",")
+        for row in csv_reader:
+            user = []
+            user.append(row[1])
+            user.append(row[2])
+            user.append(row[4])
+            extracted_details.append(user)
+    return extracted_details
+
+print(transform_user_details())
+```
+
+### Load
+
+```python
+import csv
+
+from csv_transform import transform_user_details
+
+def load_transformed_details(old_file_name, new_file_name):
+    transformed_user_details = transform_user_details()
+    with open(new_file_name, "w", newline = "") as new_file:
+        csv_writer = csv.writer(new_file)
+        csv_writer.writerows(transformed_user_details)
+
+load_transformed_details("user_details.csv", "new_user_details.csv")
+```

@@ -1,1 +1,4 @@
-python/.idea/
+PythonProject/.idea
+PythonProject/.pytest_cache
+PythonProject/.venv
+PythonProject/main.py
