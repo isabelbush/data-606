@@ -5,7 +5,7 @@
 Simulation of human intelligence
 - Traditional AI = designed for a specific task (e.g. facial recognition)
 - Modern AI = generalist and adaptable (e.g. chatbots)
-- Machine learning = subset of AI where model learns rules from data rather than being programmed using
+- Machine learning = subset of AI where model learns rules from data rather than being programmed using:
     - Decision trees to learn rules
     - Neural networks to learn patterns
     - Statistical models to learn relationships
@@ -28,15 +28,14 @@ Neural network trained on data to perform task
     - Supervised learning uses data that includes known answers or labels
     - Unsupervised learning uses data without being given the correct answers
     - Reinforcement learning incentivises model to think correctly using rewards
-- Inference = model uses learning data to infer expected result using new data
+- Inference = model uses learning data to infer expected result with new data
 - Training dataset = augmented
 - Validation (testing) dataset = normal
 
 # Understanding Modern AI
 
-## LLM
+## Large Language Model (LLM)
 
-Large Language Model
 - Specialised neural network trained on vast textual datasets to generate text
 - LMM = Large Multimodal Model (most LLMs are now multimodal but still referred to as LLMs)
 - LLMs do not retrieve facts but infer the most likely answer
@@ -72,11 +71,10 @@ Large Language Model
 
 ## Limitations
 
-- Hallucinations = false claims or facts
 - LLMs are prone to error due to reliance on probability
-- LLMs can take on demographic biases found in training data and tend to disproportionately reflect Western perspectives
-- Training data should be vast and varied
+- Hallucinations = false claims or facts
 - Entity disambiguation = LLM cannot distinguish between two entities of the same name
+- LLMs can take on demographic biases found in training data and tend to disproportionately reflect Western perspectives (training data should be vast and varied)
 - Model collapse theory = LLM repeatedly training on LLM data
 
 ## Context Window
@@ -141,7 +139,7 @@ Use the lowest model for the need, balancing:
 
 ## AI Fluency Framework
 
-1. Delegation (What should be delegated to AI vs. what should be done by humans)
+1. Delegation (what should be delegated to AI vs. what should be done by humans)
 2. Description (prompt engineering)
 3. Discernment (assess usefulness of AI output)
 4. Diligence (take responsibility for AI use)

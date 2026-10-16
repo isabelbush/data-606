@@ -5,7 +5,7 @@ Software that track changes which allows you to:
 - Compare versions over time
 - Branch off for safe experimentation
 
-## Key concepts
+## Key Concepts
 
 - Repository = central hub which stores files, commits and history
 - Directory = folder
@@ -19,7 +19,7 @@ Software that track changes which allows you to:
 - GUI = graphical user interface
 - Shell = way to communicate with OS/Kernal without GUI
 
-# Commands
+## Commands
 
 - pwd = present working directory
 - cd [folder_name]= change directory
@@ -33,6 +33,10 @@ Software that track changes which allows you to:
 - git add [file_name.ext] = stage a specific file for commit
 - git add . = stage all changes in current directory
 - git commit -m "[message]" = commit staged changes to repository
+- touch .gitignore = add to repository root
+- git add .gitignore = file should still be committed
+- echo "[file_path]" >> .gitignore = instruct Git which files to ignore
+- cat .gitignore = check which files are being ignored
 
 # GitHub
 
@@ -44,13 +48,6 @@ Cloud platform accessed remotely via the internet that hosts repositories
 
 ## Commands
 
-- git remote add origin [\[github link\]](https://github.com/isabelbush/data-606.git) = connect git to github
+- git remote add origin [github link](https://github.com/isabelbush/data-606.git) = connect git to github
 - git branch -M main = change name of core local branch from master to main
 - git push -u origin main = send commits to github
-
-# .gitignore
-
-- touch .gitignore = add to repository root
-- git add .gitignore = file should still be committed
-- echo "[file_path]" >> .gitignore = instruct Git which files to ignore
-- cat .gitignore = check which files are being ignored

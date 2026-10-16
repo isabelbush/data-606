@@ -74,14 +74,14 @@ Frameworks
 
 - Product Owner = manages product backlog and communicates with stakeholders
 - Scrum Master = part of the scrum team and responsible for facilitating the process
-- Developers = self-managing and cross-fucntional team who create the product
+- Developers = self-managing and cross-functional team who create the product
 
 ## Requirements
 
 - Functional requirements = what the system does (e.g. login, order placement)
 - Non-functional requirements = how the system behaves (e.g. transaction speed, data encryption)
 
-## Elicitation
+### Requirement Elicitation
 
 - Observation
 - Workshops
@@ -128,12 +128,14 @@ Stakeholders required to discuss user stories
 
 How you know when a user story is complete
 
-Gherkin scenario (happy)
+### Gherkin scenario (happy)
+
 - GIVEN `I am on the registration page`
 - WHEN `I enter a valid username and password`
 - THEN `I get sent a confirmation email`
 
-Gherkin scenario (sad)
+### Gherkin scenario (sad)
+
 - GIVEN `I am on the registration page`
 - WHEN `I enter an invalid password`
 - THEN `I get an invalid password error message`

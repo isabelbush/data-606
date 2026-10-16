@@ -126,6 +126,7 @@ Structure every test into three clear blocks
 
 ```python
 def test_discount()
+
     price = 50.0
 
     result = apply_discount(price, percent = 10)

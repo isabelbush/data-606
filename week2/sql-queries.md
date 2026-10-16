@@ -23,10 +23,10 @@
 ## Formatting
 
 - SQL keywords in upper case
-- names of columns/tables in lower case
-- new line for each clause
-- separate columns with comma
-- separate statements with semicolon
+- Names of columns/tables in lower case
+- New line for each clause
+- Separate columns with comma
+- Separate statements with semicolon
 
 ## SELECT
 
@@ -432,19 +432,6 @@ WHERE ProductID IN (
 ); 
 ```
 
-# Advanced
-
-```sql
-SELECT od.ProductID, UnitPrice, "Total Amount"
-FROM [Order Details] od
-INNER JOIN
-	(SELECT ProductID,
-		SUM(UnitPrice * Quantity) AS "Total Amount"
-	FROM [Order Details]
-	GROUP BY ProductID
-) sq ON od.ProductID = sq.ProductID;
-```
-
 # Query Optimisation
 
 ## Sargable
@@ -462,19 +449,19 @@ WHERE YEAR(OrderDate) = 1997
 
 Create data structure for non-key attributes that are commonly used in WHERE, JOIN, ORDER BY clauses to speed up data retrieval
 
-### Basic index
+### Basic Index
 
 ```sql
 CREATE INDEX idx_customer_city ON Customers(City);
 ```
 
-### Unique index
+### Unique Index
 
 ```sql
 CREATE UNIQUE INDEX idx_product_name ON Products(ProductName);
 ```
 
-### Composite index
+### Composite Index
 
 ```sql
 CREATE INDEX idx_orders_customer_date ON Orders(CustomerID, OrderDate);

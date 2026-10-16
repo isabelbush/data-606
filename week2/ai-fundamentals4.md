@@ -26,7 +26,7 @@ Predefined process that runs automatically when triggered and carries out a sequ
 
 Connects workflow platform to another system
 
-## AI-powered Workflow
+## AI-Powered Workflow
 
 At least one step is decided by a model rather than a rule written in advance
 - Makes workflows probabalistic rather than deterministic

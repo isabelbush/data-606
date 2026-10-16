@@ -131,23 +131,29 @@ Different systems require slightly different syntax
 
 -- = comment
 
-Characters
+### Characters
+
 - VARCHAR() = variable characters (set maximum length)
 - VARCHAR(max) = maximum characters allowed by server
 - CHAR() = fixed number of characters (e.g. phone number)
 - NVARCHAR()/NCHAR() = variable characters not restricted to letters
 
-Datetime
+### Datetime
+
 - DATE
 - DATETIME
 - TIME
 
-Numbers
+### Numbers
+
 - INT = integer
 - NUMERIC/DECIMAL(precision, scale) = exact decimal numbers
     - precision = total number of digits
     - scale = number of decimal places
 - FLOAT = approximate decimal numbers
+
+### Boolean
+
 - BINARY() = bytes of raw data
 - BIT = boolean
 

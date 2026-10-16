@@ -5,7 +5,7 @@
 - `*` and `?` = wildcards
 - `&` = combines two cells
 - `cell&" "&cell` = combines two cells with a space in the middle
-- `cell&", "&cell` = combines two cells with a space in the middle
+- `cell&", "&cell` = combines two cells with a comma and space in the middle
 - `"Text: "&cell` = combines text with cells
 - `$column$row` = row and column stays fixed when copied
 
@@ -57,13 +57,6 @@
 - `=DATEDIF(cell,cell,"m")` = calculates difference in complete months
 - `=DATEDIF(cell,cell,"y")` = calculates difference in  complete years
 
-## Converting Data Types
-
-- `=VALUE()` = converts numeric text to number
-- `=TEXT()` = converts number to text
-- `=DATEVALUE()` = converts date stored as text to date
-- `=TIMEVALUE()` = converts time stored as text to time
-
 ## Text Functions
 
 - `=LEFT(cell,number)` = extracts a specified number of characters from the start
@@ -78,17 +71,20 @@
 - `=TEXTJOIN("delimiter",ignore_empty,cells)` = combines multiple cells with the same delimiter
 - `=UNIQUE()` = returns unique values
 
+## Converting Data Types
+
+- `=VALUE()` = converts numeric text to number
+- `=TEXT()` = converts number to text
+- `=DATEVALUE()` = converts date stored as text to date
+- `=TIMEVALUE()` = converts time stored as text to time
+
 # Functions
 
-## IF Function
+## IF
 
 `=IF(condition,"value_if_true","value_if_false")` = returns one result if a condition is true and another if false
 
 ![alt text](../images/image-31.png)
-
-### Multiple Conditions
-
-![alt text](../images/image-34.png)
 
 ## AND
 
@@ -102,7 +98,7 @@
 
 ![alt text](../images/image-33.png)
 
-## Combining Functions
+### Multiple Conditions
 
 ![alt text](../images/image-32.png)
 

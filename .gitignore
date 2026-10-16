@@ -1,4 +1,5 @@
 PythonProject/.idea
-PythonProject/.pytest_cache
 PythonProject/.venv
 PythonProject/main.py
+PythonProject/.pyest_cache
+PythonProject/.ipynb_checkpoints

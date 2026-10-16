@@ -138,9 +138,9 @@ Amount of variation in one variable that can be explained by the other
 ## Validity
 
 Values which violate defined constraints such as:
-- data type (e.g. numeric, boolean, date)
-- range (e.g. age, height)
-- regular expression (e.g. phone number, postcode)
+- Data type (e.g. numeric, boolean, date)
+- Range (e.g. age, height)
+- Regular expression (e.g. phone number, postcode)
 
 ## Accuracy
 

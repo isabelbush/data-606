@@ -1,17 +1,10 @@
 # Agentic AI
 
-## AI Evolution
-
-- Manual (human)
-- Assistance (human runs workflow, AI drafts, human accepts or rejects)
-- Collaboration (flow runs itself and AI decides one defined step)
-- Delegation (human sets a goal and model chooses steps, order, tools)
-
 ## AI Agent
 
 System that can pursue a goal, decide what to do, take actions using tools and adapt
 - Agency to make decisions on our behalf in pursuit of goal
-- Humans can stay involved by
+- Humans can stay involved by:
     - Approving the proposed plan
     - Gating actions (e.g. actively approve or reject proposed action)
     - Stopping (interrupt, redirect or cap)
@@ -41,7 +34,7 @@ Agents are built on top of LLMs and extend their capabilities with:
 Specialised AI agent
 - Codebase environment
 - Developer tools
-- Can run what its own output so the environment itself tells it whether it worked
+- Can run its own output so the environment itself tells it whether it worked
 - Changes are revertible because of VCS
 - Wider blast radius since a terminal has full control of machine so needs tighter guardrails
 
@@ -75,6 +68,7 @@ Agents should have less autonomy the harder it is to undo actions
 - Harder to reverse = external communications, deleted record, code merged to production, published content, financial transaction
 
 ### Safe Use
+
 - Sandbox (experiment safely) 
 - Test (validate before it matters)
 - Production (stronger controls, narrower permissions)
